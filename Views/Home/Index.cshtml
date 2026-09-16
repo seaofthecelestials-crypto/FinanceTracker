@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Finance Dashboard";
+}
+    <div class="text.center">
+        <h1 class="display-4">Finance DashBoard</h1>
+        <p>Track your spending and manage your budget</p>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-header">Total Deposits</div>
+                    <div class="card-body">
+                        <h2 class="card-title">@ViewBag.TotalDeposits.ToString("C")</h2>
+                        <p class="card-text">Money coming in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-header">Total Spent</div>
+                    <div class="card-body">
+                        <h2 class="card-title">@ViewBag.TotalSpent.ToString("C")</h2>
+                        <p class="card-text">Money going out</p>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Remaining Balance</div>
+                <div class="card-body">
+                    <h2 class="card-title">@ViewBag.RemainingBalance.ToString("C")</h2>
+                    <p class="card-text">Money left to spend</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Quick Links</h5>
+                    </div>
+                    <div class="card-body">
+                        <a asp-controller="Deposit" asp-action="Index" class="btn btn-outline-primary me-2">View Deposits</a>
+                        <a asp-controller="Deposit" asp-action="Create" class="btn btn-outline-success me-2">Add Deposits</a>
+                        <a asp-controller="Transactions" asp-action="Index" class="btn btn-outline-primary me-2">View Transactions</a>
+                        <a asp-controller="Transactions" asp-action="Create" class="btn btn-outline-success me-2">Add Transactions</a>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+<div class="card mt-4">
+	<div class="card-header">
+		Spending by Category
+	</div>
+	<div class="card-body">
+		<canvas id="spendingChart"></canvas>
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const categoryNames = @Json.Serialize(ViewBag.CategoryNames);
+    const categoryTools = @Json.Serialize(ViewBag.CategoryTotals);
+
+    new Chart(document.getElementById("spendingChart"), {
+        type: "bar",
+        data:{
+            labels: categoryNames,
+            datasets:[{
+                label: "AmountSpent",
+                data: categoryTools,
+                backgroundColor: "rgba(220, 53, 69, 0.7)"
+            }]
+        },
+        options:{
+            responsive: true,
+            scales:{
+                y:{
+                    beginAtZero: true
+                }
+            }
+        }
+    })
+</script>
+<p>
+    @ViewBag.PercentageSpent.ToString("0.0")% of deposited money spent
+</p>
+
+<div class="progress" role="progressbar"
+    aria-valuenow="@ViewBag.PercentageSpent"
+    aria-valuemin="0"
+    aria-valuemax="100">
+    <div class="progress-bar bg-danger"
+    style="width: @ViewBag.PercentageSpent%">
+    @ViewBag.PercentageSpent.ToString("0.0")%
+    </div>
+</div>
+<p>
+    Remaining:
+    <strong>@ViewBag.RemainingBalance.ToString("C")</strong>
+</p>

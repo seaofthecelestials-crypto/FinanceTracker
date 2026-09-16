@@ -1,0 +1,35 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+bin/
+obj/
+
+# User-specific files
+*.ruser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+#Visual Studio cache/options directory
+.vs/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+
+# Application configuration with sensitive data
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
+# User Secrets
+appsettings.local.json

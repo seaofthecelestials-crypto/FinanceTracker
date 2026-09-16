@@ -1,0 +1,88 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "About";
+}
+
+<div class="container mt-4">
+    <h1>About Finance Tracker</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <h3>What is Finance Tracker?</h3>
+            <p>
+                Finance Tracker is a personal finance management application that helps you track your spending,
+                manage your deposits, and visualize your financial health. Whether you are saving for a specific good
+                or just want to understand where your money goes, this tool makes it easy to stay on top of your finances.
+            </p>
+
+            <h3 class="mt-4">Key Features</h3>
+            <ul>
+                <li><strong>Transaction Tracking:</strong> Record and categorize all your expenses</li>
+                <li><strong>Deposit Management:</strong>Track income from various sources</li>
+                <li><strong>Dashboard Overview:</strong>See your total spending, deposits, and remaining balance</li>
+                <li><strong>Visual Charts:</strong>View spending breakdowns by category</li>
+                <li><strong>Progress Tracking:</strong>Monitor how much of your budget has been spent</li>
+            </ul>
+
+            <h3 class="mt-4">How to Use Finance Tracker</h3>
+
+            <h4>Getting Started</h4>
+            <ol>
+                <li>Start by adding your initial deposits using the "Deposits" section</li>
+                <li>Record your regular expenses as transactions</li>
+                <li>View your dashboard to see your financial overview</li>
+            </ol>
+
+            <h4>Managing Deposits</h4>
+            <ol>
+                <li>Go to the "Deposits" page from the navbr</li>
+                <li>Click "Add New Deposit"</li>
+                <li>Enter the date, description, amount, and form of money</li>
+                <li>Click "Create" to save your deposit</li>
+            </ol>
+
+            <h4>Viewing your dashboard</h4>
+            <p>
+                The home page displays your finnancial summary including total deposits, total spent,
+                remaining balance, and a chart showing spending by category. This helps you quickly
+                understand your finnancial situation at a glance.
+            </p>
+
+            <h3 class="mt-4">Technical Information</h3>
+            <p>
+                <strong>Version:</strong> 1.0<br />
+                <strong>Technology Stack:</strong> ASP.Net Core, SQL Server, Entity Framework Core<br />
+                <strong>System Requirements:</strong> Modern web browser with JavaScript enabled
+            </p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card-header">
+                <h5>Quick Tips</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Regularly update your transactions for accurate tracking</li>
+                    <li>Use categories to organize your spending</li>
+                    <li>Check your dashboard frequently to monitor progress</li>
+                    <li>Set aside time each week to review your finances</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>Need Help?</h5>
+            </div>
+            <div class="card-body">
+                <p>
+                    If you have questions or encounter issues, please visit our
+                    <a asp-action="Contact">Contact</a> page for assistance.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
