@@ -3,6 +3,7 @@ using ASP.NetLearning.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Npgsql;
 
 namespace ASP.NetLearning
 {
