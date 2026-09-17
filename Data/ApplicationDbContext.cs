@@ -1,5 +1,7 @@
 ﻿using ASP.NetLearning.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Linq;
 
 namespace ASP.NetLearning.Data
 {
