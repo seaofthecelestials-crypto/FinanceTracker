@@ -23,6 +23,6 @@ namespace ASP.NetLearning.Models
         [StringLength (1000)]
         public string Message { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }
