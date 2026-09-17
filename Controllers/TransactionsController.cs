@@ -42,6 +42,7 @@ namespace ASP.NetLearning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Transaction transaction)
         {
+            transaction.Date = DateTime.SpecifyKind(transaction.Date, DateTimeKind.Utc);
             if (ModelState.IsValid)
             {
                 _context.Transactions.Add(transaction);

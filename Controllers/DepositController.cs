@@ -42,6 +42,7 @@ namespace ASP.NetLearning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Deposit deposit)
         {
+            deposit.Date = DateTime.SpecifyKind(deposit.Date, DateTimeKind.Utc);
             if (ModelState.IsValid)
             {
                 _deposit.Deposits.Add(deposit);
