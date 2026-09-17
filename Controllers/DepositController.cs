@@ -71,6 +71,7 @@ namespace ASP.NetLearning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Deposit deposit)
         {
+            deposit.Date = DateTime.SpecifyKind(deposit.Date, DateTimeKind.Utc);
             if (id != deposit.Id)
             {
                 return NotFound();
