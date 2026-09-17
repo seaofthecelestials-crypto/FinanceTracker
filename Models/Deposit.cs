@@ -5,10 +5,10 @@ namespace ASP.NetLearning.Models
     public class Deposit
     {
         public int Id { get; set; }
-        
+
         [Required]
         [DataType(DataType.Date)]
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.UtcNow;
         
         [Required]
         [StringLength(100)]

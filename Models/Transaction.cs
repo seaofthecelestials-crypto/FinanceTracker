@@ -8,7 +8,7 @@ namespace ASP.NetLearning.Models
         
         [Required]
         [DataType(DataType.Date)]
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.UtcNow;
         
         [Required]
         [StringLength(100)]
