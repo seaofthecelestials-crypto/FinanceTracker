@@ -22,7 +22,7 @@ namespace ASP.NetLearning.Data
             return base.SaveChanges();
         }
 
-        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             NormalizeDateTimes();
             return await base.SaveChangesAsync(cancellationToken);
